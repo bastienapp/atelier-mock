@@ -1,7 +1,5 @@
 package com.wildcodeschool.mockexample.entity;
 
-import org.hibernate.validator.constraints.Length;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;

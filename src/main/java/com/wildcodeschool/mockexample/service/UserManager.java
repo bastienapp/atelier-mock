@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.nio.charset.StandardCharsets;
-import java.util.Optional;
 
 @Service
 public class UserManager {
@@ -25,21 +24,9 @@ public class UserManager {
      * @throws IllegalArgumentException if email or password is empty
      * @throws NotFoundException        if user isn't found
      */
-    public User signIn(String email, String password) throws IllegalArgumentException, NotFoundException {
+    public User signIn(String email, String password) {
 
-        if (email.isEmpty()) {
-            throw new IllegalArgumentException("email is empty");
-        }
-        if (password.isEmpty()) {
-            throw new IllegalArgumentException("password is empty");
-        }
-
-        Optional<User> optionalUser = userRepository.findByEmailAndPassword(email, password);
-        if (optionalUser.isPresent()) {
-            return optionalUser.get();
-        } else {
-            throw new NotFoundException("user not found");
-        }
+        return null;
     }
 
     /**
@@ -50,8 +37,7 @@ public class UserManager {
      */
     public User signUp(User user) {
 
-        user.setPassword(encrypt(user.getPassword()));
-        return userRepository.save(user);
+        return null;
     }
 
     private String encrypt(String password) {
